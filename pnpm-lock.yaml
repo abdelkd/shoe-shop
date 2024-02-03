@@ -8,6 +8,9 @@ dependencies:
   "@radix-ui/react-slot":
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.52)(react@18.2.0)
+  "@t3-oss/env-nextjs":
+    specifier: ^0.8.0
+    version: 0.8.0(typescript@5.3.3)(zod@3.22.4)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -32,6 +35,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.1)
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   "@types/node":
@@ -330,6 +336,39 @@ packages:
       }
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@t3-oss/env-core@0.8.0(typescript@5.3.3)(zod@3.22.4):
+    resolution:
+      {
+        integrity: sha512-Tc1pg0KH/tJeI0Z1s/Isp1VsGDj1N03ZAYFV8GjWgMxytF/ve0Dv+opjmTapHICRv8qiB1Y/fsTjkWNMpKPRCQ==,
+      }
+    peerDependencies:
+      typescript: ">=5.0.0"
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.3.3
+      zod: 3.22.4
+    dev: false
+
+  /@t3-oss/env-nextjs@0.8.0(typescript@5.3.3)(zod@3.22.4):
+    resolution:
+      {
+        integrity: sha512-bJyoE8of4QmqZN7a49iLJAbUq4graScb9ezXzvnuIVr9JP43C093vmy55hT1uZL533CwiPz8zo1INwyAS6qnHw==,
+      }
+    peerDependencies:
+      typescript: ">=5.0.0"
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      "@t3-oss/env-core": 0.8.0(typescript@5.3.3)(zod@3.22.4)
+      typescript: 5.3.3
+      zod: 3.22.4
     dev: false
 
   /@types/node@20.11.16:
@@ -1851,7 +1890,6 @@ packages:
       }
     engines: { node: ">=14.17" }
     hasBin: true
-    dev: true
 
   /undici-types@5.26.5:
     resolution:
@@ -1930,3 +1968,10 @@ packages:
         integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==,
       }
     engines: { node: ">= 14" }
+
+  /zod@3.22.4:
+    resolution:
+      {
+        integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==,
+      }
+    dev: false
