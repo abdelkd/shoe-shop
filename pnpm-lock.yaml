@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  "@prisma/client":
+    specifier: ^5.9.1
+    version: 5.9.1(prisma@5.9.1)
   "@radix-ui/react-slot":
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.52)(react@18.2.0)
@@ -297,19 +300,33 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@prisma/client@5.9.1(prisma@5.9.1):
+    resolution:
+      {
+        integrity: sha512-caSOnG4kxcSkhqC/2ShV7rEoWwd3XrftokxJqOCMVvia4NYV/TPtJlS9C2os3Igxw/Qyxumj9GBQzcStzECvtQ==,
+      }
+    engines: { node: ">=16.13" }
+    requiresBuild: true
+    peerDependencies:
+      prisma: "*"
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      prisma: 5.9.1
+    dev: false
+
   /@prisma/debug@5.9.1:
     resolution:
       {
         integrity: sha512-yAHFSFCg8KVoL0oRUno3m60GAjsUKYUDkQ+9BA2X2JfVR3kRVSJFc/GpQ2fSORi4pSHZR9orfM4UC9OVXIFFTA==,
       }
-    dev: true
 
   /@prisma/engines-version@5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64:
     resolution:
       {
         integrity: sha512-HFl7275yF0FWbdcNvcSRbbu9JCBSLMcurYwvWc8WGDnpu7APxQo2ONtZrUggU3WxLxUJ2uBX+0GOFIcJeVeOOQ==,
       }
-    dev: true
 
   /@prisma/engines@5.9.1:
     resolution:
@@ -322,7 +339,6 @@ packages:
       "@prisma/engines-version": 5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64
       "@prisma/fetch-engine": 5.9.1
       "@prisma/get-platform": 5.9.1
-    dev: true
 
   /@prisma/fetch-engine@5.9.1:
     resolution:
@@ -333,7 +349,6 @@ packages:
       "@prisma/debug": 5.9.1
       "@prisma/engines-version": 5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64
       "@prisma/get-platform": 5.9.1
-    dev: true
 
   /@prisma/get-platform@5.9.1:
     resolution:
@@ -342,7 +357,6 @@ packages:
       }
     dependencies:
       "@prisma/debug": 5.9.1
-    dev: true
 
   /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.52)(react@18.2.0):
     resolution:
@@ -1559,7 +1573,6 @@ packages:
     requiresBuild: true
     dependencies:
       "@prisma/engines": 5.9.1
-    dev: true
 
   /queue-microtask@1.2.3:
     resolution:
