@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
-import AddToCart from "@/components/add-to-cart";
 import ProductInfo from "@/components/product-info";
 
 type ProductPageParams = {
