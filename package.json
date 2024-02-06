@@ -9,7 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "db:seed": "node lib/seed.js",
-    "db:migrade": "prisma migrate dev"
+    "db:migrate": "prisma migrate dev"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
