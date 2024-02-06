@@ -1,6 +1,6 @@
 import CartList from "@/components/cart-list";
 
-export default function Cart() {
+export default async function Cart() {
   return (
     <main className="w-screen max-w-md mx-auto lg:max-w-xl py-7 px-8">
       <h3 className="border-b pb-2 mb-3 text-4xl font-semibold">Cart:</h3>

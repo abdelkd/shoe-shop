@@ -3,7 +3,6 @@ import { Suspense } from "react";
 
 import { prisma } from "@/lib/db";
 import Hero from "../public/images/Hero.webp";
-import { Button } from "@/components/ui/button";
 import Section from "@/components/home-section";
 
 const FeaturedShoes = async () => {

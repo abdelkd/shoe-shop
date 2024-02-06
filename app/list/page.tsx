@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import ProductCard from "@/components/product-card";
+import { Suspense } from "react";
 
 type PageProps = {
   params: {};
@@ -9,19 +10,7 @@ type PageProps = {
   };
 };
 
-function Product() {
-  return (
-    <div className="w-60 h-72 shadow-md rounded-md overflow-hidden">
-      <div className="w-full h-48 bg-gray-500" />
-      <div className="mx-6 my-2">
-        <h3>Product</h3>
-        <p>$123</p>
-      </div>
-    </div>
-  );
-}
-
-export default async function ListPage({ params, searchParams }: PageProps) {
+async function SearchList({ params, searchParams }: PageProps) {
   let gender = searchParams?.gender;
   let query = searchParams?.query ?? "";
 
@@ -49,5 +38,13 @@ export default async function ListPage({ params, searchParams }: PageProps) {
           ))
         : null}
     </main>
+  );
+}
+
+export default function ListPage({ params, searchParams }: PageProps) {
+  return (
+    <Suspense>
+      <SearchList params={params} searchParams={searchParams} />
+    </Suspense>
   );
 }

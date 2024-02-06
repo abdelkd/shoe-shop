@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { prisma } from "@/lib/db";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import ProductInfo from "@/components/product-info";
 
 type ProductPageParams = {
@@ -17,7 +17,7 @@ export default async function ProductPage({ params }: ProductPageParams) {
   });
 
   if (!product) {
-    return notFound();
+    return redirect("/");
   }
 
   const imageUrl = "/api/image/" + product.imageId;
