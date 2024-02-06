@@ -22,6 +22,9 @@ const config = {
       },
     },
     extend: {
+      gridTemplateColumns: {
+        "fluid-products": "repeat(auto-fit, minmax(16rem, 1fr))",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

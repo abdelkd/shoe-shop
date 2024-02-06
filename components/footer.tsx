@@ -18,7 +18,7 @@ const FooterLink = ({ href, children }: FooterLinkProps) => {
 
 export default function Footer() {
   return (
-    <footer className="px-5 py-3 max-w-7xl mx-auto flex justify-end">
+    <footer className="px-5 py-3 max-w-7xl mx-auto flex justify-end border-border border-t">
       <ul className="flex font-medium">
         <FooterLink href="/about-us">About us</FooterLink>
         <FooterLink href="/contact">Contact</FooterLink>
