@@ -11,16 +11,23 @@ datasource db {
 }
 
 model Product {
-  id              String   @id @default(uuid())
+  id              String   @id
   name            String
   price           Int
   description     String
   audience        Audience
-  images          String[]
+  image           Image @relation(fields: [imageId], references: [id])
+  imageId         String @unique
   addedOn         DateTime @default(now())
   visits          Int
   availableSizes  String[]
   availableColors String[]
+}
+
+model Image {
+  id String @id @default(uuid())
+  data Bytes
+  product Product?
 }
 
 enum Audience {
