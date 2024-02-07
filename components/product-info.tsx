@@ -21,13 +21,13 @@ type ProductInfoProps = {
   availableColors: string[];
   description: string;
   price: number;
-  imageUrl: string;
+  imageId: string;
 };
 
 export default function ProductInfo({
   id,
   name,
-  imageUrl,
+  imageId,
   availableSizes,
   availableColors,
   description,
@@ -40,7 +40,7 @@ export default function ProductInfo({
   const addToCart = (e: FormEvent) => {
     e.preventDefault();
 
-    dispatch(add({ id, name, imageUrl, price, quantity: 1, size, color }));
+    dispatch(add({ id, name, imageId, price, quantity: 1, size, color }));
   };
 
   return (
