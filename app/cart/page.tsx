@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 import { useAppDispatch, useAppSelector } from "@/hooks/store-hooks";
 import loadApiImage from "@/lib/loadApiImage";
 import { remove } from "@/services/state/slices/cart";
@@ -46,6 +47,14 @@ const Product = ({ id, name, imageId }: ProductProps) => {
 
 export default function Cart() {
   const products = useAppSelector((state) => state.cart.products);
+  const { toast } = useToast();
+
+  const onCheckout = () => {
+    toast({
+      title: "Checked Out Successfully",
+      description: "Thanks you for buying our stuff",
+    });
+  };
 
   return (
     <main className="w-screen max-w-md mx-auto lg:max-w-xl py-7 px-8">
@@ -57,7 +66,9 @@ export default function Cart() {
               {products.map((product, i) => (
                 <Product key={product.id.concat(" ", String(i))} {...product} />
               ))}
-              <Button className="mt-4 bg-black max-w-16">Check Out</Button>
+              <Button onClick={onCheckout} className="mt-4 bg-black">
+                Check Out
+              </Button>
             </>
           ) : (
             <p className="mx-auto text-2xl">Your Cart is Empty</p>
