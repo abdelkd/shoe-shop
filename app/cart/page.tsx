@@ -53,9 +53,12 @@ export default function Cart() {
       <div className="w-full bg-slate-50 px-2 py-4 rounded-lg flex flex-col justify-center gap-4">
         <Suspense fallback={<p>loading...</p>}>
           {products.length > 0 ? (
-            products.map((product, i) => (
-              <Product key={product.id.concat(" ", String(i))} {...product} />
-            ))
+            <>
+              {products.map((product, i) => (
+                <Product key={product.id.concat(" ", String(i))} {...product} />
+              ))}
+              <Button className="mt-4 bg-black max-w-16">Check Out</Button>
+            </>
           ) : (
             <p className="mx-auto text-2xl">Your Cart is Empty</p>
           )}
