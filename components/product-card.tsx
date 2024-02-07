@@ -1,20 +1,19 @@
 import Image from "next/image";
-import { env } from "@/env.mjs";
+import loadApiImage from "@/lib/loadApiImage";
 
 export type ProductCardProps = {
-  id?: string;
-  imageId?: string;
-  name?: string;
-  price?: number;
+  id: string;
+  imageId: string;
+  name: string;
+  price: number;
 };
 
 const ProductCard = ({ imageId, name, price }: ProductCardProps) => {
-  const imageUrl = `/api/image/${imageId}`;
-
   return (
     <div className="w-64 rounded-lg border overflow-hidden shadow-sm mx-auto">
       <Image
-        src={imageUrl}
+        loader={loadApiImage}
+        src={imageId}
         alt={name ?? ""}
         width={256}
         height={256}
