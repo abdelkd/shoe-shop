@@ -67,7 +67,6 @@ export default function ProductInfo({
               </SelectGroup>
             </SelectContent>
           </Select>
-          <input type="text" id="p" name="pp" />
         </div>
 
         <div className="my-4">
