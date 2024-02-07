@@ -2,6 +2,7 @@ import Image from "next/image";
 import { prisma } from "@/lib/db";
 import { redirect } from "next/navigation";
 import ProductInfo from "@/components/product-info";
+import { env } from "@/env.mjs";
 
 type ProductPageParams = {
   params: {

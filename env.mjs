@@ -4,11 +4,16 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
+    BASE_URL: z.string().url(),
   },
   client: {},
   // If you're using Next.js < 13.4.4, you'll need to specify the runtimeEnv manually
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
+    BASE_URL:
+      process.env.NODE_ENV === "production"
+        ? process.env.BASE_URL
+        : "http://localhost:3000/",
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   // experimental__runtimeEnv: {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { env } from "@/env.mjs";
 
 export type ProductCardProps = {
   id?: string;
@@ -19,7 +20,6 @@ const ProductCard = ({ imageId, name, price }: ProductCardProps) => {
         height={256}
         className="object-cover w-full h-56"
       />
-      {/* <div className="w-full h-56 bg-gray-400"></div> */}
       <div className="px-4 py-2 bg-background">
         <p className="text-2xl font-semibold">{name}</p>
         <p className="text-lg text-gray-500 font-medium">${price}</p>

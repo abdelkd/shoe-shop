@@ -18,5 +18,8 @@ export async function GET(req: Request, { params }: Params) {
     return NextResponse.json({}, { status: 404, statusText: "Not Found" });
   }
 
-  return new NextResponse(image.data);
+  const res = new NextResponse(image.data);
+  res.headers.set("content-type", "image/jpeg");
+
+  return res;
 }

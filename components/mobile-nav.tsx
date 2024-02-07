@@ -38,7 +38,7 @@ export default function MobileNav() {
   const searchParams = useSearchParams();
 
   const containerStyles = clsx(
-    "w-full h-dvh bg-gray-50/40 absolute top-0 left-0 transition-500 opacity-0 hidden",
+    "w-full h-dvh bg-gray-50/40 absolute top-0 left-0 transition-500 opacity-0 hidden z-20",
     {
       "block opacity-100": isOpen,
     },
@@ -84,7 +84,7 @@ export default function MobileNav() {
             </div>
             <Button
               asChild
-              className="bg-transparent"
+              className="bg-transparent hover:bg-transparent"
               onClick={() => setIsOpen(false)}
             >
               <div className="w-full h-full"></div>
