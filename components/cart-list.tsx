@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/hooks/store-hooks";
+import loadApiImage from "@/lib/loadApiImage";
 import { remove } from "@/services/state/slices/cart";
 import { Trash } from "lucide-react";
 import Image from "next/image";
@@ -9,21 +10,21 @@ import Image from "next/image";
 type ProductProps = {
   id: string;
   name: string;
-  imageUrl: string;
+  imageId: string;
 };
 
-const Product = ({ id, name, imageUrl }: ProductProps) => {
+const Product = ({ id, name, imageId }: ProductProps) => {
   const dispatch = useAppDispatch();
 
   const removeProduct = () => {
     dispatch(remove({ id }));
-    console.log("removing", id);
   };
 
   return (
     <div className="flex gap-3 px-5 my-4">
       <Image
-        src={imageUrl}
+        loader={loadApiImage}
+        src={imageId}
         alt={name}
         height={256}
         width={256}
